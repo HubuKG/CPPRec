@@ -1,0 +1,35 @@
+
+embedding_size: 64
+feat_embed_dim: 64
+n_layers: 2
+aggr_mode: 'add'
+knn_k: [ 10 ]
+n_mm_layers: 1
+u_layers: 2
+learning_rate: [ 0.0001]
+degree_n: [ 3 ]
+num_of_session_k: [ 10 ]
+use_fai: True
+use_psh: True
+psh_hidden: 64
+psh_tau: 0.2
+use_user_aug: True
+user_aug_item_source: "mm"      # "image" | "p" | "z" | "co" | "mm"
+user_aug_item_k: 10
+user_aug_user_k: [10]
+user_aug_remove_seen: True
+user_aug_apply_to_main: False
+# user_aug_apply_to_main: True
+
+use_user_view_cl: True
+user_view_tau: 0.2
+user_view_cache_every: 1
+user_view_cache_on_cpu: True
+
+csi_rank: [8, 16, 32]
+reg_weight: [0.1, 0.01, 0.001, 0.0001, 0.00001]
+csi_dropout: [0.3]
+g_weight: [0.0001, 0.001, 0.01, 0.1]
+user_view_weight: [0.0001, 0.001, 0.01, 0.1]
+
+hyper_parameters: [ "knn_k","learning_rate", "reg_weight", "gamma","tau","degree_n","num_of_session_k", "g_weight","csi_dropout" ,"csi_rank", "user_view_weight", "user_aug_user_k"]
